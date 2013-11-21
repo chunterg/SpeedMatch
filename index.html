@@ -1,0 +1,58 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title>SpeedMatch</title>
+		<meta name="viewport" id="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+		<link href="assets/styles/default-mobile.css" rel="stylesheet"><link>
+		<script src="assets/scripts/default.js" type="text/javascript"></script>
+
+	</head>
+	<body onload="openTestCase('testcases/all.js');">
+		<div id="wrap">
+			<h1>SpeedMatch</h1>
+			<div id="buttonContainer">
+				
+				<span id="openUrl">
+					<label for="url">
+					Enter the test case url:
+					</label>
+					<input type="text" id="url" title="Normally, the url ends with .js. View the help.html to learn more." onkeypress="if(arguments[0].keyCode || arguments[0].which == 13)openTestCase(this.value)" value="testcases/all.js">
+					<input type="button" onclick='openTestCase(document.getElementById("url").value)' value="Open Test Case" class="button"> 
+				</span>
+				<input type="button" onclick='startSpeedMatch(1, 1)' value="Start Tests" class="button">
+				<input type="button" onclick='stopSpeedMatch()' value="Stop Tests" class="button">
+				<a href="javascript:;" onclick="toggle('qr')">查看二维码</a>
+			</div>
+			<div id="qr" style="display:none;">
+				<img src="http://gtms01.alicdn.com/tps/i1/T1qxrVXl8qXXaG4.rS-300-300.png">
+			</div>
+			<table id="testcases">
+			
+			</table>
+			<div id="note">
+				<h4>Note</h4> 
+				<ol>
+					<li>Testcase.js is relative to current html file. <a href="testcases/demo.js" target="_blank">Here is a sample of testcase.js</a></li>
+					<li>Double click any cell to rerun.</li>
+				</ol>
+			</div>
+			
+			<div id="tools">
+				<div id="frames">
+				</div>
+				<table id="colors">
+					<tr>
+						<td class="best">Best</td>
+						<td class="normal">Normal</td>
+						<td class="worst">Worst</td>
+						<td class="error">Error</td>
+					</tr>
+				</table>
+				
+				&nbsp;
+			</div>
+			
+		</div>
+	</body>
+</html>
